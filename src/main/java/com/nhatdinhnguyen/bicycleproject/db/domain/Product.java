@@ -28,15 +28,15 @@ public class Product {
 
     @OneToMany(mappedBy = "product",
             cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER)
-    private Set<Stock> productStock;
+            fetch = FetchType.LAZY)
+    private final List<Stock> productStock = new ArrayList<>();
 
     @OneToMany(mappedBy = "product",
             cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER)
-    private Set<OrderItem> orderItems;
+            fetch = FetchType.LAZY)
+    private final List<OrderItem> orderItems = new ArrayList<>();
 
-    public Product() {}
+    protected Product() {}
 
     public Product(String name, Brand brand, Category category, Integer modelYear, Double listPrice) {
         this.name = name;
@@ -106,19 +106,11 @@ public class Product {
         this.listPrice = listPrice;
     }
 
-    public Set<Stock> getProductStock() {
+    public List<Stock> getProductStock() {
         return productStock;
     }
 
-    public void setProductStock(Set<Stock> productStock) {
-        this.productStock = productStock;
-    }
-
-    public Set<OrderItem> getOrderItems() {
+    public List<OrderItem> getOrderItems() {
         return orderItems;
-    }
-
-    public void setOrderItems(Set<OrderItem> orderItems) {
-        this.orderItems = orderItems;
     }
 }

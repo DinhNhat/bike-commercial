@@ -33,8 +33,6 @@ public class Stock implements Serializable {
     public String toString() {
         return "Stock{" +
                 "pk=" + pk +
-                ", store=" + store +
-                ", product=" + product +
                 ", quantity=" + quantity +
                 '}';
     }
