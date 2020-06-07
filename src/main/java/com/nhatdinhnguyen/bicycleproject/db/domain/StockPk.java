@@ -17,6 +17,14 @@ public class StockPk implements Serializable {
         this.productId = productId;
     }
 
+    @Override
+    public String toString() {
+        return "StockPk{" +
+                "storeId=" + storeId +
+                ", productId=" + productId +
+                '}';
+    }
+
     public Integer getStoreId() {
         return storeId;
     }
@@ -41,13 +49,5 @@ public class StockPk implements Serializable {
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
-    }
-
-    @Override
-    public String toString() {
-        return "StockPk{" +
-                "storeId=" + storeId +
-                ", productId=" + productId +
-                '}';
     }
 }

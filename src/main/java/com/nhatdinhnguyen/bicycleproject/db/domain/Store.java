@@ -46,7 +46,6 @@ public class Store {
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
-        this.storeStocks = new ArrayList<>();
     }
 
     @Override

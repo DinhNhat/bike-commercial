@@ -29,14 +29,14 @@ public class Product {
     @OneToMany(mappedBy = "product",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
-    private final List<Stock> productStock = new ArrayList<>();
+    private List<Stock> productStock = new ArrayList<>();
 
     @OneToMany(mappedBy = "product",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
-    private final List<OrderItem> orderItems = new ArrayList<>();
+    private List<OrderItem> orderItems = new ArrayList<>();
 
-    protected Product() {}
+    protected Product() {};
 
     public Product(String name, Brand brand, Category category, Integer modelYear, Double listPrice) {
         this.name = name;
