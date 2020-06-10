@@ -29,16 +29,17 @@ public class Product {
     @OneToMany(mappedBy = "product",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
-    private List<Stock> productStock = new ArrayList<>();
+    private List<Stock> productStock;
 
     @OneToMany(mappedBy = "product",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
-    private List<OrderItem> orderItems = new ArrayList<>();
+    private List<OrderItem> orderItems;
 
     protected Product() {};
 
-    public Product(String name, Brand brand, Category category, Integer modelYear, Double listPrice) {
+    public Product(String name, Brand brand, Category category,
+                   Integer modelYear, Double listPrice) {
         this.name = name;
         this.brand = brand;
         this.category = category;
@@ -51,10 +52,10 @@ public class Product {
         return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", brand=" + brand.getId() +
-                ", category=" + category.getId() +
                 ", modelYear=" + modelYear +
                 ", listPrice=" + listPrice +
+                ", brand=" + brand +
+                ", category=" + category +
                 '}';
     }
 

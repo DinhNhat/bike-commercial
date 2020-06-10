@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "stocks")
-public class Stock implements Serializable {
+public class Stock {
     @EmbeddedId
     private StockPk pk;
 
@@ -67,15 +67,5 @@ public class Stock implements Serializable {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
     }
 }

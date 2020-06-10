@@ -17,7 +17,7 @@ public class Category {
     @OneToMany(mappedBy = "category",
             fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
-    private final List<Product> products = new ArrayList<>();
+    private List<Product> products;
 
     public Category() {}
 
@@ -47,5 +47,9 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Product> getProducts() {
+        return products;
     }
 }

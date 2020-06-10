@@ -17,7 +17,7 @@ public class Brand {
     @OneToMany(mappedBy = "brand",
             fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
-    private final List<Product> products = new ArrayList<>();
+    private List<Product> products;
 
     public Brand() {}
 

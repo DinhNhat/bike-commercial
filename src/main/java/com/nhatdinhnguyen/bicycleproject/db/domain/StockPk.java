@@ -25,6 +25,16 @@ public class StockPk implements Serializable {
                 '}';
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
     public Integer getStoreId() {
         return storeId;
     }
@@ -39,15 +49,5 @@ public class StockPk implements Serializable {
 
     public void setProductId(Integer productId) {
         this.productId = productId;
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
     }
 }

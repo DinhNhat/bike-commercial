@@ -16,6 +16,7 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = true)
     private Customer customer;
+
     @Column(name = "order_status")
     private Integer status;
     //    @Basic
@@ -59,13 +60,13 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "id=" + id +
-                ", customer=" + customer +
+                ", customer=" + customer.getId() +
                 ", status=" + status +
                 ", orderDate=" + orderDate +
                 ", requiredDate=" + requiredDate +
                 ", shippedDate=" + shippedDate +
-                ", staff=" + staff +
-                ", store=" + store +
+                ", staff=" + staff.getId() +
+                ", store=" + store.getId() +
                 '}';
     }
 
