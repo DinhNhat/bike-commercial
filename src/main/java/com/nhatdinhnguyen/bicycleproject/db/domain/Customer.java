@@ -44,6 +44,22 @@ public class Customer {
         this.zipCode = zipCode;
     }
 
+    public Customer(String state) {
+        this.person = null;
+        this.street = null;
+        this.city = null;
+        this.state = state;
+        this.zipCode = null;
+    }
+
+    public Customer(Person person) {
+        this.person = person;
+        this.street = null;
+        this.city = null;
+        this.state = null;
+        this.zipCode = null;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +

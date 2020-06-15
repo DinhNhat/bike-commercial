@@ -18,6 +18,13 @@ public class Person {
         this.phone = phone;
     }
 
+    public Person(String lastName) {
+        this.firstName = null;
+        this.lastName = lastName;
+        this.email = null;
+        this.phone = null;
+    }
+
     @Override
     public String toString() {
         return "Person{" +

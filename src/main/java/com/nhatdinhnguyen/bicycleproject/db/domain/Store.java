@@ -35,6 +35,11 @@ public class Store {
             fetch = FetchType.LAZY)
     private List<Order> storeOrders;
 
+    @OneToMany(mappedBy = "store",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    private List<Staff> staffs;
+
     public Store() {}
 
     public Store(String name, String phone, String email,
@@ -130,15 +135,11 @@ public class Store {
         return storeStocks;
     }
 
-    public void setStoreStocks(List<Stock> storeStocks) {
-        this.storeStocks = storeStocks;
-    }
-
     public List<Order> getStoreOrders() {
         return storeOrders;
     }
 
-    public void setStoreOrders(List<Order> storeOrders) {
-        this.storeOrders = storeOrders;
+    public List<Staff> getStaffs() {
+        return staffs;
     }
 }
