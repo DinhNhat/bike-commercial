@@ -38,11 +38,6 @@ public class CustomerOrderApiController {
             throw new NoSuchElementException("Customer not found with id: " + custId);
     }
 
-//    private Optional<Customer> verifyCustomer(int custId) throws NoSuchElementException {
-//        Optional<Customer> customer = customerRepository.findById(custId);
-//        return customer;
-//    }
-
     private CustomerOrderDto toCustomerOrderDto(Order order) {
         double result = averageListPriceByOrderId(order.getId());
         return new CustomerOrderDto(order.getCustomer().getId(), order.getId(), order.getStatus(), order.getOrderDate(), result);
